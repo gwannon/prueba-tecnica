@@ -47,6 +47,51 @@ header span {
   margin: 15px;
 }
 
+header input[type=checkbox] {
+  position: absolute;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  display: block;
+  top: 9px;
+  right: 15px;
+}
+
+header input[type=checkbox]:after,
+header input[type=checkbox]:before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 30px;
+  background-color: var(--secondary-color);
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  transition: all 0.3s;
+}
+
+header input[type=checkbox]:before {
+  top: 20px;
+}
+
+header input[type=checkbox]:checked:after,
+header input[type=checkbox]:checked:before {
+  transform: rotate(45deg);
+  top: 15px;
+}
+
+header input[type=checkbox]:checked:before {
+  transform: rotate(-45deg);
+}
+
+header input[type=checkbox] ~ ul {
+  display: none;
+}
+
+header input[type=checkbox]:checked ~ ul {
+  display: block;
+}
+
 section:nth-of-type(1) {
   overflow: hidden;
   margin-bottom: 120px;
