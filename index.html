@@ -12,12 +12,12 @@
   </header>
   <section>
     <h1><span>Lorem</span> <span>ipsum</span> <span>dolor</span></h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam <b>vulputate dui efficitur</b> ultrices pharetra. Praesent tempor mollis purus nec fringilla.</p>
+    <p>Lorem ipsum dolor sit ame amet, consectetur adipiscing elit. Etiam <b>vulputate dui efficitur</b> ultrices pharetra. Praesent tempor mollis purus nec fringilla vel commodo.</p>
   </section>
   <section>
     <article style="--bg-image1: url(../images/Tshirt1.png); --bg-image2: url(../images/Tshirt2.png);">
       <div>
-        <h2>T-shirt</h2>
+        <h2><a href="#">T-shirt</a></h2>
         <p>Etiam vulputate dui efficitur ultrices pharetra. Praesent tempor mollis purus.</p>
         <input type="checkbox" value="#FB088C" />
         <input type="checkbox" value="#212222" />
@@ -26,7 +26,7 @@
     </article>
     <article style="--bg-image1: url(../images/Bottle1.png);">
       <div>
-        <h2>Bottle</h2>
+        <h2><a href="#">Bottle</a></h2>
         <p>Etiam vulputate dui efficitur ultrices pharetra. Praesent tempor mollis purus.</p>
         <input type="checkbox" value="#FB088C" />
         <button>Buy</button>
@@ -34,14 +34,13 @@
     </article>
   </section>
   <footer>
-    We love what we do.We are Worköholics.
-
-    E-mail
-
-
-    I have read and accepted the Terms and Conditions.
-
-    Submit
+    <h5>We love what we do.<br/>We are Worköholics.</h5>
+    <form>
+      <input type="email" placeholder="E-mail" required />
+      <label><input type="checkbox" required /> I have read and accepted the <a href="#">Terms and Conditions</a>.</label>
+      <button type="submit">Submit</button>
+    </form>
+    <p><a href="mailto:hello@workoholics.es">hello@workoholics.es</a><a href="tel:+34944059957">+34 944 059 957</a></p>
   </footer>
 </body>
 </html>
