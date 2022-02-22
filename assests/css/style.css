@@ -27,7 +27,7 @@
 body {
   font-family: 'DM Sans', sans-serif;
   margin: 0px;
-  padding: 0px;
+  padding: 54px 0px 0px;
 }
 
 header,
@@ -36,6 +36,14 @@ section {
   max-width: 1260px;
   margin: 0px auto;
   padding: 0px;
+}
+header {
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 30;
 }
 
 header span {
@@ -85,11 +93,37 @@ header input[type=checkbox]:checked:before {
 }
 
 header input[type=checkbox] ~ ul {
-  display: none;
+  width: 100%;
+  display: block;
+  position: absolute;
+  background-color: white;
+  padding: 30px;
+  box-sizing: border-box;
+  margin: 0px;
+  left: 100%;
+  z-index: 20;
+  transition: left 0.3s;
+}
+
+ header input[type=checkbox] ~ ul li {
+  list-style-type: none;
+  text-align: center;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+header input[type=checkbox] ~ ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+header input[type=checkbox] ~ ul li a:hover {
+  color: var(--main-color);
 }
 
 header input[type=checkbox]:checked ~ ul {
-  display: block;
+  left: 0%;
 }
 
 section:nth-of-type(1) {
