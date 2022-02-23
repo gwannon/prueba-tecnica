@@ -1,5 +1,6 @@
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
   <title>worköholics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
   <link href="./assests/css/style.css" rel="stylesheet">
@@ -9,30 +10,36 @@
     <span>workohölics</span>
     <input type="checkbox" />
     <ul>
-      <li><a href="">Menú 1</a></li>
-      <li><a href="">Menú 2</a></li>
-      <li><a href="">Menú 3</a></li>
+      <li><a href="#">Menú 1</a></li>
+      <li><a href="#">Menú 2</a></li>
+      <li><a href="#">Menú 3</a></li>
     </ul>
   </header>
+  <nav><a href="">Contact us</a></nav>
   <section>
     <h1><span>Lorem</span> <span>ipsum</span> <span>dolor</span></h1>
     <p>Lorem ipsum dolor sit ame amet, consectetur adipiscing elit. Etiam <b>vulputate dui efficitur</b> ultrices pharetra. Praesent tempor mollis purus nec fringilla vel commodo.</p>
   </section>
-  <section>
+  <section>  
     <article style="--bg-image1: url(../images/Tshirt1.png); --bg-image2: url(../images/Tshirt2.png);">
+      <input type="radio" id="image1" name="t-shirt" checked="checked" />
+      <input type="radio" id="image2" name="t-shirt" />
       <div>
         <h2><a href="#">T-shirt</a></h2>
         <p>Etiam vulputate dui efficitur ultrices pharetra. Praesent tempor mollis purus.</p>
-        <input type="checkbox" value="#FB088C" />
-        <input type="checkbox" value="#212222" />
+        <label for="image1" style="--color: #FB088C;"></label>
+        <label for="image2" style="--color: #212222;"></label>
         <button>Buy</button>
       </div>
     </article>
-    <article style="--bg-image1: url(../images/Bottle1.png);">
+    <article style="--bg-image1: url(../images/Bottle1.png); --bg-image2: url(../images/Bottle2.png);">
+      <input type="radio" id="image3" name="bottle" checked="checked" />
+      <input type="radio" id="image4" name="bottle" />
       <div>
         <h2><a href="#">Bottle</a></h2>
         <p>Etiam vulputate dui efficitur ultrices pharetra. Praesent tempor mollis purus.</p>
-        <input type="checkbox" value="#FB088C" />
+        <label for="image3" style="--color: #FB088C;"></label>
+        <label for="image4" style="--color: #212222;"></label>
         <button>Buy</button>
       </div>
     </article>
@@ -46,6 +53,15 @@
     </form>
     <p><a href="mailto:hello@workoholics.es">hello@workoholics.es</a><a href="tel:+34944059957">+34 944 059 957</a></p>
   </footer>
+  <script>
+    function loadCSS(src){
+      var linkTag = document.createElement ("link");
+      linkTag.href = src;
+      linkTag.rel = "stylesheet";
+      var head = document.getElementsByTagName ("head")[0];
+      head.insertBefore(linkTag, head.lastChild)
+    };
+    loadCSS("./assests/css/async.css");
+  </script>
 </body>
 </html>
-

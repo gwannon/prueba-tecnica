@@ -1,23 +1,3 @@
-/* latin */
-@font-face {
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/dmsans/v10/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* latin */
-@font-face {
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/dmsans/v10/rP2Cp2ywxg089UriASitCBimCw.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
 :root {
   --main-color: #FB088C;
   --secondary-color: #212222;
@@ -30,13 +10,15 @@ body {
   padding: 54px 0px 0px;
 }
 
-header,
 footer,
 section {
-  max-width: 1260px;
+  max-width: 1440px;
   margin: 0px auto;
   padding: 0px;
+  position: relative;
+  box-sizing: border-box;
 }
+
 header {
   background-color: #fff;
   position: fixed;
@@ -44,6 +26,7 @@ header {
   top: 0px;
   left: 0px;
   z-index: 30;
+  box-sizing: border-box;
 }
 
 header span {
@@ -63,6 +46,7 @@ header input[type=checkbox] {
   display: block;
   top: 9px;
   right: 15px;
+  cursor: pointer;
 }
 
 header input[type=checkbox]:after,
@@ -96,7 +80,7 @@ header input[type=checkbox] ~ ul {
   width: 100%;
   display: block;
   position: absolute;
-  background-color: white;
+  background-color: #fff;
   padding: 30px;
   box-sizing: border-box;
   margin: 0px;
@@ -105,11 +89,12 @@ header input[type=checkbox] ~ ul {
   transition: left 0.3s;
 }
 
- header input[type=checkbox] ~ ul li {
+header input[type=checkbox] ~ ul li {
   list-style-type: none;
   text-align: center;
   font-size: 18px;
   line-height: 130%;
+  padding: 5px 0px;
 }
 
 header input[type=checkbox] ~ ul li a {
@@ -124,6 +109,10 @@ header input[type=checkbox] ~ ul li a:hover {
 
 header input[type=checkbox]:checked ~ ul {
   left: 0%;
+}
+
+nav {
+  display: none;
 }
 
 section:nth-of-type(1) {
@@ -214,9 +203,17 @@ section:nth-of-type(2) article:after {
 section:nth-of-type(2) article div {
   padding: 20px 40% 20px 20px;
   position: relative;
-  background: transparent var(--bg-image1) calc(100% + 66px) center no-repeat;
+  background: transparent none calc(100% + 66px) center no-repeat;
   background-size: contain;
   z-index: 20;
+}
+
+section:nth-of-type(2) article input[type=radio]:nth-of-type(1):checked ~ div {
+  background-image: var(--bg-image1);
+}
+
+section:nth-of-type(2) article input[type=radio]:nth-of-type(2):checked ~ div {
+  background-image: var(--bg-image2);
 }
 
 section:nth-of-type(2) article h2 {
@@ -245,23 +242,18 @@ section:nth-of-type(2) article p {
   margin: 0px 0px 25px;
 } 
 
-section:nth-of-type(2) article input {
-  appearance: none;
+section:nth-of-type(2) article input[type=radio] {
+  display: none;
+}
+
+section:nth-of-type(2) article label {
   cursor: pointer;
-  position: relative;
+  background-color: var(--color);
   display: inline-block;
   width: 31px;
   height: 14px;
   margin: 0px 5px 0px 0px;
   padding: 0px;
-}
-
-section:nth-of-type(2) article input[value='#212222'] {
-  background-color: var(--secondary-color);
-}
-
-section:nth-of-type(2) article input[value='#FB088C'] {
-  background-color:var(--main-color);
 }
 
 section:nth-of-type(2) article button,
@@ -290,16 +282,8 @@ footer form button:after {
   clip-path: polygon(0% 0%, 0% 55%, 93% 55%, 76% 76%, 79% 78%, 100% 50%, 77% 19%, 74% 24%, 95% 48%, 4% 49%, 3% 0%);
 }
 
-/*@media (min-width: 600px) {
-  section:nth-of-type(2) article button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-  }
-}*/
-
 footer {
-  background-color: #222222;
+  background-color: #222;
   margin: 0px auto;
   padding: 40px 10px;
   color: #fff;
@@ -331,7 +315,7 @@ footer form input[type=email] {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #fff;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   outline: none;
   color: #fff;
 }
@@ -342,6 +326,7 @@ footer form label {
   position: relative;
   padding: 0px 60px 0px 25px;
   display: block;
+  margin-top: 10px;
 }
 
 footer form label input[type=checkbox] {
