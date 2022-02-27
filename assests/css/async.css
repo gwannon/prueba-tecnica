@@ -1,4 +1,3 @@
-/* latin */
 @font-face {
   font-family: 'DM Sans';
   font-style: normal;
@@ -8,7 +7,6 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* latin */
 @font-face {
   font-family: 'DM Sans';
   font-style: normal;
@@ -18,46 +16,256 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+:root {
+  --main-color: #FB088C;
+  --secondary-color: #212222;
+  --bg-color: #fff;
+}
+
+header {
+  background-color: var(--bg-color);
+}
+header span {
+  color: var(--main-color);
+}
+
+header input[type=checkbox]:after,
+header input[type=checkbox]:before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 30px;
+  background-color: var(--secondary-color);
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  transition: transform 0.3s;
+}
+
+header input[type=checkbox]:before {
+  top: 20px;
+}
+
+header input[type=checkbox]:checked:after,
+header input[type=checkbox]:checked:before {
+  transform: rotate(45deg);
+  top: 15px;
+}
+
+header input[type=checkbox]:checked:before {
+  transform: rotate(-45deg);
+}
+
+header input[type=checkbox]:checked ~ ul {
+  left: 0%;
+}
+
+header input[type=checkbox] ~ ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: filter 0.3s;
+}
+
+header input[type=checkbox] ~ ul li a:hover {
+  filter: invert(23%) sepia(77%) saturate(6367%) hue-rotate(316deg) brightness(95%) contrast(107%);
+}
+
+footer,
+section {
+  max-width: 1440px;
+  margin: 0px auto;
+  padding: 0px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+section:nth-of-type(1) h1 span:nth-child(2) {
+  background: transparent url(../images/Mug1.webp) calc(100% + 66px) center no-repeat;
+  background-size: contain;
+}
+
+section:nth-of-type(1) p:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  background-color: var(--main-color);
+  margin-right: 20px;
+}
+
+section:nth-of-type(2) article label {
+  background-color: var(--color);
+}
+
+section:nth-of-type(2) article div {
+  background: transparent none calc(100% + 66px) center no-repeat;
+  background-size: contain;
+}
+
+section:nth-of-type(2) article h2 a:hover,
+section:nth-of-type(2) article h2 a:focus {
+  /*color: #727475;*/
+  opacity: 0.7;
+}
+
+section:nth-of-type(2) article input[type=radio]:nth-of-type(1):checked ~ div {
+  background-image: var(--bg-image1);
+}
+
+section:nth-of-type(2) article input[type=radio]:nth-of-type(2):checked ~ div {
+  background-image: var(--bg-image2);
+}
+
+section:nth-of-type(2) article button,
+footer form button {
+  display: block;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  position: relative;
+  font-size: 1.28em;
+  line-height: 100%;
+  margin: 60px 0px 30px;
+  padding: 0px 40px 0px 0px;
+}
+
+section:nth-of-type(2) article button:after,
+footer form button:after {
+  content: "";
+  height: 18px;
+  width: 28px;
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background-color:  var(--secondary-color);
+  clip-path: polygon(0% 0%, 0% 55%, 93% 55%, 76% 76%, 79% 78%, 100% 50%, 77% 19%, 74% 24%, 95% 48%, 4% 49%, 3% 0%);
+  transition: transform 0.3s;
+  will-change: translateX;
+}
+
+section:nth-of-type(2) article button:hover:after,
+footer form button:hover:after {
+  transform: translateX(10px);
+}
+
+footer {
+  background-color: #222;
+  margin: 0px auto;
+  padding: 40px 10px;
+  color: #fff;
+}
+
+footer h3 {
+  font-size: 1.85em;
+  line-height: 130%;
+  padding: 0px;
+  margin: 0px;
+}
+
+footer p {
+  font-size: 1.28em;
+  line-height: 130%;
+  padding: 0px;
+  margin: 0px;
+}
+
+footer form {
+  margin: 60px 0px;
+}
+
+footer form input[type=email] {
+  font-size: 1.14em;
+  line-height: 100%;
+  padding: 5px 5px 5px 0px;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 15px;
+  outline: none;
+  color: #fff;
+}
+
+footer form label {
+  font-size: 1em;
+  line-height: 150%;
+  position: relative;
+  padding: 0px 60px 0px 25px;
+  display: block;
+  margin-top: 10px;
+}
+
+footer form label input[type=checkbox] {
+  position: absolute;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  display: block;
+  top: 1px;
+  left: -4px;
+  border: 1px solid #fff;
+}
+
+footer form label input[type=checkbox]:after {
+  content: "\2713";
+  display: block;
+  color: var(--main-color);
+  position: absolute;
+  top: -16px;
+  left: -6px;
+  width: 30px;
+  height: 30px;
+  font-size: 2.42em;
+  opacity: 0;
+  transition: 0.3s opacity;
+}
+
+footer form label input[type=checkbox]:checked:after {
+  opacity: 1;
+}
+
+footer form button {
+  color: #fff;
+  margin: 30px 0px;
+}
+
+footer form button:after {
+  background-color: #fff;
+}
+
+footer p a {
+  display: block;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+
+footer a,
+footer button {
+  color: #fff;
+  transition: opacity 0.3s;
+  will-change: opacity;
+}
+
+footer a:hover,
+footer a:focus,
+footer button:hover,
+footer button.focus {
+  opacity: 0.7;
+}
+
+header input[type=checkbox],
+section:nth-of-type(2) article label {
+  cursor: pointer;
+}
+
 @media (min-width: 650px) {
-
-  body {
-    padding: 103px 0px 0px;
-  }
-
-  header {
-    padding: 35px;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  header span {
-    margin: 0px;
-  }
-
   header input[type=checkbox] {
     display: none;
   }
 
-  header input[type=checkbox] ~ ul {
-    position: relative;
-    left: auto;
-    z-index: 20;
-    padding: 0px;
-    display:flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: auto;
-  }
 
-  header input[type=checkbox] ~ ul li {
-    display: inline-block;
-    margin-left: 40px;
-  }
-
-  nav {
-    display: block;
-  }
 
   footer {
     display: flex;
@@ -72,7 +280,7 @@
     width: 40%;
   }
 
-  footer h5 {
+  footer h3 {
     order: 2;
     width: 60%;
   }
@@ -107,5 +315,92 @@
   footer form label input[type=checkbox] {
     top: 4px;
     left: 0px;
+  }
+}
+
+@media (min-width: 850px) {
+  section:nth-of-type(1) h1 span:nth-child(2) {
+    background: transparent url(../images/Mug1.webp) 99% center no-repeat;
+    background-size: auto 104%;
+  }
+}
+
+@media (min-width: 1000px) {
+  section:nth-of-type(1) p {
+    max-width: 62%;
+    padding-left: 35%;
+  }
+
+  section:nth-of-type(2) article:not(section:nth-of-type(2) article:last-child) {
+    margin-bottom: 0px;
+  }
+
+  section:nth-of-type(2) article:nth-child(odd) {
+    max-width: 50%;
+  }
+
+  section:nth-of-type(2) article:nth-child(even) {
+    max-width: 50%;
+    margin-left: 50%;
+  }
+
+  section:nth-of-type(2) article div {
+    padding: 20px 40% 80px 20px;
+    background-position: 70% center;
+  }
+
+  section:nth-of-type(2) article:after {
+    bottom: 80px;
+  }
+
+  section:nth-of-type(2) article h2 {
+    font-size: 5.71em;
+  }
+
+  section:nth-of-type(2) article p {
+    font-size: 1.28em;
+  }
+
+  section:nth-of-type(2) article label {
+    margin: 25px 5px 25px 0px;
+  }
+
+  section:nth-of-type(2) article button {
+    position: absolute;
+    margin: 0px;
+    bottom: 100px;
+    right: 23px;
+  }
+}
+
+@media (min-width: 1380px) {
+  nav {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 80%;
+    transform: rotate(90deg);
+    transform-origin: right;
+    z-index: 20;
+    line-height: 100%;
+  }
+  nav a {
+    display: block;
+    padding: 10px 10px 10px 50px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    position: relative;
+    font-size: 1.3em;
+  }
+
+  nav a:before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 40px;
+    background-color: var(--main-color);
+    top: 17px;
+    left: 0px;
+    position: absolute;
   }
 }
