@@ -334,14 +334,11 @@
   </footer>
   <script>
     document.getElementsByTagName("h1")[0].innerHTML = "<span>"+document.getElementsByTagName("h1")[0].innerHTML.replace(new RegExp(' ', 'g'), "</span> <span>")+"</span>";
-    function loadCSS(src){
-      var linkTag = document.createElement("link");
-      linkTag.href = src;
-      linkTag.rel = "stylesheet";
-      var head = document.getElementsByTagName("head")[0];
-      head.insertBefore(linkTag, head.lastChild)
-    }
-    loadCSS("./assests/css/async.css?ver=1.3");
+    var linkTag = document.createElement("link");
+    linkTag.href = "./assests/css/async.css?ver=1.3";
+    linkTag.rel = "stylesheet";
+    var head = document.getElementsByTagName("head")[0];
+    head.insertBefore(linkTag, head.lastChild)
   </script>
 </body>
 </html>
