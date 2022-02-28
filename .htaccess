@@ -36,3 +36,9 @@
 	#Header add Link "<./assests/fonts/DMSans-Regular.ttf>; rel=preload; as=font;"
 	#Header add Link "<./assests/fonts/DMSans-Bold.ttf>; rel=preload; as=font;"
 </filesMatch>
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{HTTPS} off
+	RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
