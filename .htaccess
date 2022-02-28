@@ -35,7 +35,6 @@
 	Header add Link "<./assests/css/async.css?ver=1.3>; rel=preload; as=style;"
 	#Header add Link "<./assests/fonts/DMSans-Regular.ttf>; rel=preload; as=font;"
 	#Header add Link "<./assests/fonts/DMSans-Bold.ttf>; rel=preload; as=font;"
-<<<<<<< HEAD
 	Header add Link "<./assests/images/Mug1.webp>; rel=preload; as=image;"
 	Header add Link "<./assests/images/favicon.png>; rel=preload; as=image;"
 </files>
@@ -46,12 +45,9 @@
 	Header add Link "<./assests/images/Mug1.webp>; rel=preload; as=image;"
 	Header add Link "<./assests/images/favicon.png>; rel=preload; as=image;"
 </files>
-=======
-</filesMatch>
 
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 	RewriteCond %{HTTPS} off
 	RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
->>>>>>> 373dc4482a3e9130d65d955a3628c2a755e4cb19
