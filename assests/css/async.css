@@ -79,10 +79,10 @@ section {
   box-sizing: border-box;
 }
 
-section:nth-of-type(1) h1 span:nth-child(2) {
+/*section:nth-of-type(1) h1 span:nth-child(2) {
   background: transparent url(../images/Mug1.webp) calc(100% + 66px) center no-repeat;
   background-size: contain;
-}
+}*/
 
 section:nth-of-type(1) p:before {
   content: "";
